@@ -1,0 +1,195 @@
+.links {
+    text-decoration: none;
+    color: black;
+}
+
+a.links:hover{
+    color: black;
+    box-shadow: inset 0 -2px 0 0 rgb(56, 56, 56);
+    padding-bottom: 5px;
+}
+
+.navbarMenuHover{
+    position: absolute;
+    background-color: #fcfcfc;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top:43%;
+    transition: all .1s ;
+    visibility: hidden ;
+}
+
+.showdropDownMenuHover:hover .navbarMenuHover{
+    visibility: visible ;
+} 
+
+.menu-custom {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+/*     border: 1px solid black;  */
+}
+.menu-custom-burger {
+    width: 20px;
+    height: 2px;
+    background-color: gray;
+    box-shadow: 0 .5px 2px black;
+    border-radius: 2px;
+    transition: all .3s ease-in-out;
+}
+.menu-custom-burger::before,
+.menu-custom-burger::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: gray;
+    box-shadow: 0 .5px 2px black;
+    border-radius: 2px;
+    transition: all .3s ease-in-out;
+}
+.menu-custom-burger::before {
+    transform: translateY(-10px);
+    left: 15%;   
+}
+.menu-custom-burger::after {
+    transform: translateY(10px);
+    left: 15%;   
+}
+
+/* ANIMATION */
+
+.menu-custom.open .menu-custom-burger  {
+    transform: translateX(20px);
+    background: transparent;
+    box-shadow: none;
+    
+}
+.menu-custom.open .menu-custom-burger::before {
+    transform: rotate(45deg) translate(-20px, 20px);
+}
+.menu-custom.open .menu-custom-burger::after {
+    transform: rotate(-45deg) translate(-20px, -20px);
+}
+
+.dropDownContent {
+    top: 10%;
+    padding-top: 2%;
+    padding-bottom: 50%;
+    background-color: white;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-x: auto;
+    overflow-y: auto;
+    text-align:justify;
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s ease;
+
+}
+.menu.active {
+    position: fixed;
+    background-color: white;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top:0%;
+}
+.dropDownContent.active{
+    top: 20%;
+    opacity: 1;
+    z-index: 1;
+    transition: all .3s ease;
+}
+
+.zoom 
+      {
+        transition: transform .2s; /* Animation */
+      }
+.zoom:hover 
+    {
+        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+
+.link-1 {
+    transition: all .5s ease;
+    translate: 0% 0%;
+    position: relative;
+    z-index: 0;
+}
+
+.link-2 {
+    translate: -200% 0%;
+    opacity: 0;
+    position: absolute;
+    z-index: -999999;
+   
+}
+
+/* link-2 */
+.link-1.change {
+    transition: all .5s ease;
+    translate: 200% 0%;
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+}
+.link-2.open {
+    transition: all .5s ease;
+    translate: 0% 0%;
+    opacity: 1;
+    position: relative;
+    z-index: 0;
+
+}
+
+.banner1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/banner1.jpg) !important; 
+    background-size:cover; min-height: 500px;
+}
+.banner-carrier{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/bannerTrading.jpg) !important; 
+    background-size:cover; min-height: 500px;
+}
+.banner-trading{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/bannerTrading2.jpg) !important; 
+    background-size:cover; min-height: 500px;
+}
+.banner-carrier1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/bannerTrading.jpg) !important; 
+    background-size:cover;
+    min-height: 244px;
+    max-width: 99%
+}
+.banner-trading1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/bannerTrading2.jpg) !important; 
+    background-size:cover;
+    min-height: 244px;
+    max-width: 99%
+}
+.banner-login{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/him-city-hall.jpg) !important; 
+    background-size:cover;
+    padding-top: -50%;
+}
+
+#search-bar{
+    position: absolute;
+    background-color: #fcfcfc;
+    width: 57.5%;
+    height: auto;
+    max-height: 30%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    visibility: hidden ;
+}
